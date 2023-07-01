@@ -1,0 +1,1 @@
+<img src="{{ asset('img/oicLogo.png') }}" class=" w-32" {{ $attributes }}>
