@@ -1,0 +1,1 @@
+<img src="{{ asset('img/ysc-logo.png') }}" class=" w-14" {{ $attributes }}>

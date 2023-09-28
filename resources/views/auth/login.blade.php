@@ -115,6 +115,34 @@
 
 
         </div>
+
+    </div>
+    <div class="footer">
+        <div> <a href="/" class="hover:underline hover:text-green-400">YSLC Online Registration V1.0.3</a>
+        </div>
+        <i class="fa-solid fa-circle ml-5 mr-5" style="font-size: 0.5em"></i>
+
+        <div class="">
+            <span class="">Copyright &copy; {{ date('Y') }}</span>
+        </div>
+        <i class="fa-solid fa-circle ml-5 mr-5" style="font-size: 0.5em"></i>
+
+
+        <div class="">
+            <span class="">All Rights Reserved</span>
+        </div>
+        <i class="fa-solid fa-circle ml-5 mr-5" style="font-size: 0.5em"></i>
+
+
+        <div class="">
+            <a href="https://orointegrated.coop/" target="_blank" class="hover:underline hover:text-green-400">Oro
+                Integrated Cooperative</a>
+        </div>
+        <i class="fa-solid fa-circle ml-5 mr-5" style="font-size: 0.5em"></i>
+
+        <div class="">
+            <a href="#" class="hover:underline hover:text-green-400">Crafted by ICT Department</a>
+        </div>
     </div>
     <div id="loadingOverlay">
         <img src="{{ asset('img/load.gif') }}" alt="loading" id="loadingSpinner" />
@@ -122,13 +150,27 @@
     @push('style')
         <style>
             body {
+                position: relative;
                 background-image: url('{{ asset('img/web-back.png') }}');
                 background-size: cover;
                 background-repeat: no-repeat;
-                height:100vh;
-                width:100%;
+                height: 100vh;
+                width: 100%;
                 transition: all 3s ease;
                 opacity: 0;
+
+            }
+
+            .footer {
+                width: 100%;
+                position: absolute;
+                bottom: 10px;
+                left: 0;
+                right: 0;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
 
             }
 

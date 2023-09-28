@@ -1,168 +1,108 @@
-<x-guest-layout>
-    <div class="body">
-        <nav x-data="{ open: false }" class="w-full h-3/4">
-            <!-- Primary Navigation Menu -->
-            <div class="w-full mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between h-16">
+@extends('pages.main-page.layout.main-page-layout')
 
-                    <!-- Logo -->
-                    <div class="shrink-0 flex items-center mt-3 ml-3">
-                        <a href="/">
-                            <x-application-mark class="block h-9 w-auto" />
-                        </a>
+@section('content')
+    <div class="relative">
+        <img src="{{ asset('img/backgroundHome.jpg') }}" alt="" style="z-index: 1" class="hidden lg:block">
+        <div class="lg:container lg:absolute lg:top-6 lg:left-0 w-full h-full" style="z-index: 2">
+            <div class="flex flex-col items-center justify-center h-screen loading transition-transform duration-1000 transform translate-y-100"
+                id="HomeTitle">
+                <div class="uppercase text-sm lg:text-3xl text-orange-500 font-bold mb-4 antialiased">
+                    youth savers club laboratory cooperative
+                </div>
+
+                <div
+                    class="relative bg-orange-300 rounded border text-orange-900 border-1 shadow-2xl border-orange-900 p-3 w-full lg:w-2/5 h-36">
+                    <span class="absolute -top-5 right-0"><img class=" w-8" src="{{ asset('img/pin.png') }}"
+                            alt=""></span>
+                    <span class="absolute bottom-1 right-3"> <i class="fa-solid fa-circle text-white"
+                            style="font-size: 0.5em"></i></span>
+                    <span class="absolute bottom-1 left-3"> <i class="fa-solid fa-circle text-white"
+                            style="font-size: 0.5em"></i></span>
+                    <span class="absolute top-1 left-3"> <i class="fa-solid fa-circle text-white"
+                            style="font-size: 0.5em"></i></span>
+                    <div id="typed-strings" class=" antialiased">
+                        <p>YSC offers a lot of benefits such as <strong>scholarship, trainings, activities, and rewards</strong>.</p>
+                        <p>Start your child's financial and social growth now.</p>
+                        <p>Start for as low as PHP 150.00 only.</p>
+                        <p>Earn a guaranteed interest rate of 2% per annum.</p>
+                        <p>Open to all youth with ages between 7 to 17.</p>
+                        <p>1 year holding period starting from the date of opening the account.</p>
+                        <p>Earn points every time you save and redeem premium items.</p>
                     </div>
-
-                    <!-- Navigation Links -->
-
-
-                    <div class="hidden sm:-my-px sm:ml-10 sm:flex sm:mr-32">
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex navbar">
-                            <x-nav-main href="#" class="link" :active="request()->routeIs(['ols.transaction.index', 'ols.transaction.show.depositor'])">
-                                {{ __('Home') }}
-                            </x-nav-main>
-                        </div>
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex navbar">
-                            <x-nav-main href="#" class="link" :active="request()->routeIs(['ols.transaction.index', 'ols.transaction.show.depositor'])">
-                                {{ __('About Us') }}
-                            </x-nav-main>
-                        </div>
-
-
-
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex navbar">
-                            <x-nav-main href="#" class="link" :active="request()->routeIs(['ols.transaction.index', 'ols.transaction.show.depositor'])">
-                                {{ __('Products') }}
-                            </x-nav-main>
-                        </div>
-
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex navbar">
-                            <x-nav-main href="#" class="link" :active="request()->routeIs('ho.personnel.denied')">
-                                {{ __('Services') }}
-                            </x-nav-main>
-                        </div>
-                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex navbar">
-                            <x-nav-main href="#" class="link" :active="request()->routeIs('ho.personnel.denied')">
-                                {{ __('Contact Us') }}
-                            </x-nav-main>
-                        </div>
-
+                    <div class="mt-4">
+                        <span id="typed" class="text-sm lg:text-lg"></span>
                     </div>
-
-
-                    <!-- Hamburger -->
-                    <div class="-mr-2 flex items-center sm:hidden">
-                        <button @click="open = ! open"
-                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:text-gray-500 hover:text-gray-500 dark:hover:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-900 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-900 focus:text-gray-500 dark:focus:text-gray-400 transition duration-150 ease-in-out">
-                            <svg class="h-6 w-6" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                <path :class="{ 'hidden': open, 'inline-flex': !open }" class="inline-flex"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M4 6h16M4 12h16M4 18h16" />
-                                <path :class="{ 'hidden': !open, 'inline-flex': open }" class="hidden"
-                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-
 
                 </div>
 
-                <!-- Responsive Navigation Menu -->
-                <div :class="{ 'block': open, 'hidden': !open }" class="hidden sm:hidden">
-                    <div class="pt-2 pb-3 space-y-1">
-                        <x-responsive-nav-link href="/" :active="request()->routeIs('dashboard')">
-                            {{ __('Home') }}
-                        </x-responsive-nav-link>
-                        <x-responsive-nav-link href="#" :active="request()->routeIs('dashboard')">
-                            {{ __('About Us') }}
-                        </x-responsive-nav-link>
-                        <x-responsive-nav-link href="#" :active="request()->routeIs('dashboard')">
-                            {{ __('Products') }}
-                        </x-responsive-nav-link>
-                        <x-responsive-nav-link href="#" :active="request()->routeIs('dashboard')">
-                            {{ __('Services') }}
-                        </x-responsive-nav-link>
-                        <x-responsive-nav-link href="#" :active="request()->routeIs('dashboard')">
-                            {{ __('Contact Us') }}
-                        </x-responsive-nav-link>
-                    </div>
-
-                    <!-- Responsive Settings Options -->
-                    <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
-                        <div class="flex items-center px-4">
-                            @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                                <div class="shrink-0 mr-3">
-                                    <img class="h-10 w-10 rounded-full object-cover"
-                                        src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
-                                </div>
-                            @endif
-
-
-                        </div>
-
-                        <div class="mt-3 space-y-1">
-
-
-
-
-                        </div>
-                    </div>
+                <div class="mt-5">
+                    <button id="openModal"
+                        class="btn bg-orange-400 hover:bg-orange-600 px-5 py-2 border border-1 border-orange-800 shadow-2xl text-white">Apply
+                        Now <i class="fa-solid fa-paper-plane ml-3"></i></button>
                 </div>
-        </nav>
-    </div>
+                
 
-    <div class=" h-80 bg-slate-700">
-        <div class="py-4 text-white flex ml-52">
-            <div class="w-36 mr-10">
-                <div class="border-b-2 border-indigo-500">{{ __('Contact Info') }}</div>
+              
+
             </div>
-            <div class="w-36">
-                <div class="border-b-2 border-indigo-500">{{ __('Links') }}</div>
-            </div>
+
         </div>
     </div>
-    @push('style')
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                font-family: 'Poppins', sans-serif;
-                box-sizing: border-box;
-            }
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <p class="text-center text-md  lg:text-xl mb-3">Terms and Condition</p>
+            <a href="{{route('online_application')}}" class="bg-green-300 text-green-700 text-center rounded shadow-xl px-1 lg:px-2 py-1 lg:py-3" style="border:1px solid;  border-color: rgb(21 128 61)">Agree</a>
+        </div>
+    </div>
+    {{-- route('online_application') --}}
+@endsection
 
-            .body {
-                background-repeat: no-repeat;
-                width: 100%;
-                height: 100vh;
-                background-image: url('{{ asset('img/background3.jpg') }}');
-                background-size: cover;
-            }
+@push('styles')
+    <style>
+        body {
+            transition: all 3s ease;
+            opacity: 0;
+        }
 
-            .navbar .link {
-                position: relative;
-            }
+        body.loaded {
+            opacity: 1;
+        }
 
-            .navbar .link::before {
-                content: '';
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 0;
-                height: 2px;
-                background: #fff;
-                transition: .3s;
-            }
+        /* Styles for the modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
-            .navbar .link:hover::before {
-                width: 100%;
-            }
-        </style>
-    @endpush
-    @push('script')
-        <script>
-            $(document).ready(function() {
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 50%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
 
-            });
-        </script>
-    @endpush
-</x-guest-layout>
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+@endpush

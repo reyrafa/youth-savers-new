@@ -19,7 +19,7 @@
                 @if (auth()->user()->user_type_id == '2')
                     <a href="#" data-bs-toggle="modal" data-bs-target="#disappDep"
                         data-id="{{ $transaction->id }}" id="disappBtn"
-                        class="btn text-lg mr-3 bg-red-700 text-white hover:bg-red-900 hover:text-lg">Reject
+                        class="btn text-lg mr-3 bg-red-700 text-white hover:bg-red-900 hover:text-lg">Disapprove
                         <i class="fa-solid fa-face-frown"></i></a>
                 @endif
 

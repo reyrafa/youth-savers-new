@@ -95,7 +95,7 @@
                                                 <i class="fa-solid fa-circle-check ml-1"></i>
                                             @elseif($transaction->status->status_name == 'approved')
                                                 <i class="fa-solid fa-thumbs-up ml-1"></i>
-                                            @elseif ($transaction->status->status_name == 'rejected')
+                                            @elseif ($transaction->status->status_name == 'disapproved')
                                                 <i class="fa-solid fa-circle-xmark ml-1"></i>
                                             @endif
                                         </span>

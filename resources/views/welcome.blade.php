@@ -5,8 +5,10 @@
         </div>
     @else
         <div class="min-h-screen bg-gray-100 relative">
-            <div class="bg-green-600 w-full px-5 py-6">
-                <img src="/img/oicLogo.png" class=" w-56" alt="OIC LOGO">
+            <div class="bg-green-600 flex w-full px-5 py-6">
+                <a href="https://orointegrated.coop/"><img src="/img/oicLogo.png" class=" w-56" alt="OIC LOGO"></a>
+                <div class="border border-r-8 border-white ml-3 mr-3"></div>
+                <a href="{{ route('home')}}"><img src="{{asset('img/ysc-logo.png')}}" class=" w-20" alt="OIC LOGO"></a>
             </div>
             @if ($errors->any())
                 <div class="alert alert-danger mt-4 w-full ml-5 mr-5 text-center validation_error">
@@ -28,7 +30,7 @@
                         <ul class="list-disc ml-5">
                             <li>Please fill-out all the fillable forms below. (Asterisk (<span
                                     class="text-red-900 text-2xl font-bold">*</span>) indicates required field)</li>
-                            <li>Note: To qualify for membership, your age must be on range of 7 - 18 years old.</li>
+                            <li>Note: To qualify for membership, your age must be on range of 7 - 17 years old.</li>
                         </ul>
                     </div>
 
@@ -105,7 +107,7 @@
 
                             </div>
                             <div class="col-lg-2 mb-4">
-                                <x-label-required for="gender" value="{{ __('Gender') }}" />
+                                <x-label-required for="gender" value="{{ __('Sex') }}" />
                                 <select name="depositor[gender]" id="" class="form-control mt-1 border-black"
                                     required>
                                     <option value="" disabled="disabled" selected="true">-- Sex --</option>
@@ -213,7 +215,7 @@
 
                             </div>
                             <div class="col-lg-2 mb-4">
-                                <x-label-required for="g_gender" value="{{ __('Gender') }}" />
+                                <x-label-required for="g_gender" value="{{ __('Sex') }}" />
                                 <select name="guardian[g_gender]" id="" class="form-control mt-1 border-black"
                                     required>
                                     <option value="" disabled="disabled" selected="true">-- Sex --</option>

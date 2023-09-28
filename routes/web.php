@@ -28,13 +28,18 @@ use Illuminate\Support\Facades\Route;
 
 /*==================================== online application process ================================*/
 
-Route::get('/', [MainPageController::class, 'index']);
+Route::get('/', [MainPageController::class, 'index'])->name('home');
+Route::get('/about-us', [MainPageController::class, 'about_us'])->name('about_us');
+Route::get('/savings', [MainPageController::class, 'savings'])->name('savings');
+Route::get('/downloadable-forms', [MainPageController::class, 'downloadable_forms'])->name('downloadable_forms');
 
 Route::get('/services/youth-application', function () {
     $locations = BranchLocationModel::all();
     $branchs = BranchModel::all();
     return view('welcome', compact('locations', 'branchs'));
-});
+})->name('online_application');
+
+Route::get('contact-us', [MainPageController::class, 'contact_us'])->name('contact_us');
 
 /*============================ file uploads (signature, ID, birth certificate) =========================*/
 Route::post('/upload-signature', [FileUploadsController::class, 'store_signature']);

@@ -13,7 +13,7 @@ class EmailTesterController extends Controller
     public function for_testing_email()
     {
 
-        $receipent =  DepositorModel::find(1);
+        $receipent =  DepositorModel::find(3);
         $officer = OfficerModel::where('uid', 2)->first();
         //sending email notification
         $content = [

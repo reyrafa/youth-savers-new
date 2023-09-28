@@ -39,7 +39,7 @@
                     @endif
                 </div>
                 <div class="table-responsive">
-                    <table id="myTable" class="table stripe align-middle hover table-bordered">
+                    <table id="myTable" class="table stripe align-middle hover table-bordered text-sm">
                         <thead>
                             <tr>
                                 <th class="border">CID #</th>
@@ -48,6 +48,7 @@
                                 <th class="border">Branch</th>
                                 <th class="border">Application Date</th>
                                 <th class="border">Contact No</th>
+                                <th class="border">Remarks</th>
                                 <th class="border">Action</th>
 
                             </tr>
@@ -70,6 +71,7 @@
                                     <td>{{ $denied->depositor->branch->branch_name }}</td>
                                     <td>{{ $denied->created_at }}</td>
                                     <td>{{ $denied->depositor->contact_number }}</td>
+                                    <td>{{$denied->remarks}}</td>
                                     <td><a href="#" data-bs-toggle="modal" data-bs-target="#resetDep"
                                             data-id="{{ $denied->id }}" id="resetBtn" class="btn btn-primary"><i
                                                 class="fa-solid fa-rotate"></i></a>

@@ -19,7 +19,7 @@ class TransactionStatusSeeder extends Seeder
             array(['status_name' => 'pending'],
             ['status_name' => 'verified', ],
             ['status_name' => 'approved'],
-            ['status_name' => 'rejected'])
+            ['status_name' => 'disapproved'])
         );
     }
 }

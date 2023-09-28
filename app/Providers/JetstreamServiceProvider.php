@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Actions\Jetstream\DeleteUser;
+use App\Models\OfficerModel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -10,6 +11,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\ValidationException;
 use Laravel\Fortify\Fortify;
 use Laravel\Jetstream\Jetstream;
+use Laravolt\Avatar\Avatar;
 
 class JetstreamServiceProvider extends ServiceProvider
 {
@@ -32,8 +34,13 @@ class JetstreamServiceProvider extends ServiceProvider
         Fortify::authenticateUsing(function (Request $req) {
 
             $user = User::where('company_id', $req->company_id)->first();
+            
             if ($user && Hash::check($req->password, $user->password)) {
-             
+                $officer = OfficerModel::Where('company_id', $user->company_id)->first();
+                $fullname = ($officer == null) ? 'Rey Rafael Costemiano' : $officer->fname . " " . $officer->mname . " " . $officer->lname;
+                //$avatar = new Avatar();
+               // $avatarImg = $avatar->create($fullname)->toBase64();
+                session(['officer' => $fullname]);
 
                 return $user;
             } else if ($user && !Hash::check($req->password, $user->password)) {

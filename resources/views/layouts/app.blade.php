@@ -39,7 +39,7 @@
 <body class="font-sans antialiased">
     <x-banner />
 
-    <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+    <div class="min-h-screen bg-gray-100 dark:bg-gray-900 relative">
         @livewire('navigation-menu')
 
         <!-- Page Heading -->
@@ -54,6 +54,34 @@
         <main>
             {{ $slot }}
         </main>
+    
+        <div class="absolute bottom-4 flex items-center text-center justify-center w-full">
+            <div class=""> <a href="/" class="hover:underline hover:text-green-400">YSLC Online Registration V1.0.3</a>
+            </div>
+            <i class="fa-solid fa-circle ml-5 mr-5" style="font-size: 0.5em"></i>
+    
+            <div class="">
+                <span class="">Copyright &copy; {{ date('Y') }}</span>
+            </div>
+            <i class="fa-solid fa-circle ml-5 mr-5" style="font-size: 0.5em"></i>
+    
+    
+            <div class="">
+                <span class="">All Rights Reserved</span>
+            </div>
+            <i class="fa-solid fa-circle ml-5 mr-5" style="font-size: 0.5em"></i>
+    
+    
+            <div class="">
+                <a href="https://orointegrated.coop/" target="_blank" class="hover:underline hover:text-green-400">Oro
+                    Integrated Cooperative</a>
+            </div>
+            <i class="fa-solid fa-circle ml-5 mr-5" style="font-size: 0.5em"></i>
+    
+            <div class="">
+                <a href="#" class="hover:underline hover:text-green-400">Crafted by ICT Department</a>
+            </div>
+        </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
         integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
