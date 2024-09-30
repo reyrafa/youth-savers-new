@@ -263,8 +263,8 @@ class OnlineRegistrationController extends Controller
 
         //sending email notification
         $content = [
-            'sentence_1' => 'Please be informed that your application is <strong>REJECTED</strong> by our OLS officer because of the following reasons:
-                <br><br><br>Rejected By : <strong>' .
+            'sentence_1' => 'Please be informed that your application is <strong>DISAPPROVED</strong> by our OLS officer because of the following reasons:
+                <br><br><br>Disapproved By : <strong>' .
                 strtoupper($officer->fname) . ' ' . strtoupper($officer->mname) . ' ' . strtoupper($officer->lname) . '</strong> <br> Remarks : 
             <strong>' . strtoupper($transaction->remarks) . '</strong>',
             'sentence_2' => 'If you have questions or other inquiries, you can call or text our Youth Savers Club coordinators
@@ -274,7 +274,7 @@ class OnlineRegistrationController extends Controller
         ];
 
         Notification::send($receipent, new OnlineApplicationNotification($content));
-        return redirect()->route('ols.transaction.index')->with('success', 'Application is rejected successfully');
+        return redirect()->route('ols.transaction.index')->with('success', 'Application is disapproved successfully');
     }
 
     public function denied()

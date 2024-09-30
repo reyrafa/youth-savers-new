@@ -69,7 +69,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         $stats = TransactionStatusModel::withCount('transactions')->get();
         $totalTransactions = TransactionModel::count();
-        return view('dashboard' , compact('stats','totalTransactions'));
+        return view('dashboard', compact('stats', 'totalTransactions'));
     })->name('dashboard');
 });
 

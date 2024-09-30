@@ -68,7 +68,7 @@
                                     <x-nav-main href="{{route('downloadable_forms')}}"
                                         class="w-full px-4 py-2 text-sm hover:rounded hover:bg-orange-200">Downloadable
                                         Forms</x-nav-main>
-                                    <x-nav-main href="#"
+                                    <x-nav-main href="{{route('online_application')}}"
                                         class="w-full px-4 py-2 text-sm hover:rounded hover:bg-orange-200">Online
                                         Membership</x-nav-main>
 

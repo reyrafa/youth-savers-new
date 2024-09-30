@@ -339,7 +339,7 @@
                         <td class="header">
                             <a href="" style="display: inline-block;">
 
-                                <img src="https://oicapp.com/oicLogo.png" class="logo" alt="OIC Logo">
+                                <img src="https://oicapp.com/images/oicLogo.png" class="logo" alt="OIC Logo">
 
                             </a>
                         </td>
@@ -354,7 +354,7 @@
                                 <tr style="height: 120px; ">
                                     <td
                                         style="background-color:green; font-weight:900; text-size: 1.5em; text-align:center;">
-                                        <img src="https://oicapp.com/email.png" style="width: 5rem; height:5rem"
+                                        <img src="https://oicapp.com/images/email.png" style="width: 5rem; height:5rem"
                                             alt="email">
                                     </td>
                                 </tr>
